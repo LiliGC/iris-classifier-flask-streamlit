@@ -1,0 +1,10 @@
+# Ignorar entorno virtual
+.venv
+venv
+
+# Archivos de Python compilado y caches
+__pycache__/
+*.pyc
+
+# Git
+.git

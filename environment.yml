@@ -1,0 +1,16 @@
+name: ml-api
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - flask
+  - scikit-learn
+  - joblib
+  - numpy
+  - pandas
+  - streamlit
+  - requests
+  - pillow
+  - matplotlib
+  - seaborn

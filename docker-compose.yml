@@ -1,0 +1,28 @@
+services:
+  # Servicio para la API de Flask
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: iris_api
+    command: waitress-serve --host=0.0.0.0 --port=5000 iris_app.api.app:app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./iris_app:/app/iris_app
+
+  # Servicio para el frontend de Streamlit
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: iris_frontend
+    command: streamlit run iris_app/frontend/frontend.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./iris_app:/app/iris_app
+    environment:
+      - API_URL=http://api:5000
+    depends_on:
+      - api

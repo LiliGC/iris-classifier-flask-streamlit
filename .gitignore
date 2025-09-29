@@ -1,0 +1,23 @@
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Artefactos de construcción y logs
+*.log
+
+# Nota sobre el modelo:
+# Por ahora, incluimos el modelo.pkl para que el repo sea fácil de clonar y ejecutar.
+# En proyectos más grandes, este archivo se excluiría y se gestionaría con DVC o se descargaría desde un almacenamiento en la nube.
