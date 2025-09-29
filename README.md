@@ -131,19 +131,20 @@ Esta es la forma más sencilla de levantar toda la aplicación con un solo coman
     Este comando construirá la imagen, creará y levantará los contenedores de la API y el frontend.
 
 2.  **Acceder a los servicios:**
-    -   **Frontend Streamlit**: Abre tu navegador y ve a `http://localhost:8501`
 
-    ![Vista del frontend con Streamlit](docs\images\iris_streamlit.png)
+-   **Frontend Streamlit**: Abre tu navegador y ve a `http://localhost:8501`
 
-    -   **Frontend Streamlit** de una predicción:
+![Vista del frontend con Streamlit](docs/images/iris_streamlit.png)
 
-    ![Vista del frontend con Streamlit de una predicción](docs\images\prediccion_iris_streamlit.png)
+-  **Frontend Streamlit** de una predicción:
 
-    -   **API Flask**: Los endpoints son accesibles en `http://localhost:5000` (ej. `http://localhost:5000/health`).
+![Vista del frontend con Streamlit de una predicción](docs/images/prediccion_iris_streamlit.png)
 
-    ![Vista del endpoint index de bienvenida de la API](docs\images\flask_web.png)
+-   **API Flask**: Los endpoints son accesibles en `http://localhost:5000` (ej. `http://localhost:5000/health`).
 
-    ![Vista del endpoint health de la API](docs\images\flask_health.png)
+![Vista del endpoint index de bienvenida de la API](docs/images/flask_web.png)
+
+![Vista del endpoint health de la API](docs/images/flask_health.png)
 
 
 3.  **Validar la API (Opcional):**
