@@ -20,7 +20,7 @@ El script sigue los pasos estándar de un flujo de trabajo de Machine Learning:
     # iris_app/model/train_model.py
     joblib.dump(model, "iris_app/model/modelo.pkl")
     ```
-    ![Entrenamiento del modelo](docs\images\train_model.png)
+![Entrenamiento del modelo](docs/images/train_model.png)
 
 5.  **Generación de Métricas:** Se evalúa el modelo con los datos de prueba y se guardan métricas como `accuracy` y la matriz de confusión en `metrics.json`.
 
@@ -47,7 +47,7 @@ El proyecto comenzó con dos scripts de Python independientes: uno para la API (
     ```
     *Salida esperada en la terminal:*
 
-    ![Arranque manual de la API con Flask](docs\images\flask_app.png)
+![Arranque manual de la API con Flask](docs/images/flask_app.png)
 
 2.  **Frontend (Streamlit):** Se lanzaba en una terminal separada.
     ```bash
@@ -55,9 +55,9 @@ El proyecto comenzó con dos scripts de Python independientes: uno para la API (
     ```
     *Salida esperada en la terminal:*
 
-    ![Arranque manual del frontend con Streamlit](docs\images\frontend_streamlit.png)
+![Arranque manual del frontend con Streamlit](docs/images/frontend_streamlit.png)
 
-    ![Vista del frontend con Streamlit](docs\images\iris_streamlit.png)
+![Vista del frontend con Streamlit](docs/images/iris_streamlit.png)
 
     
 ### Pruebas Manuales de la API
@@ -69,7 +69,7 @@ Las primeras validaciones se hicieron con `curl` para asegurar que los endpoints
 curl http://127.0.0.1:5000/health
 # Respuesta esperada: {"status":"API funcionando","model":"Iris-RandomForest"}
 ```
-![Respuesta del endpoint /health en cURL](docs\images\api_funcionando.png)
+![Respuesta del endpoint /health en cURL](docs/images/api_funcionando.png)
 
 **Prueba de predicción (`/predict`):**
 ```bash
@@ -78,7 +78,7 @@ curl -X POST http://127.0.0.1:5000/predict \
   -d '{"features": [5.1, 3.5, 1.4, 0.2]}'
 # Respuesta esperada: {"prediction":0, "probabilities":[...]}
 ```
-![Respuesta del endpoint /predict en cURL](docs\images\prueba_setosa.png)
+![Respuesta del endpoint /predict en cURL](docs/images/prueba_setosa.png)
 
 **Prueba de predicción con datos no válidos(`/predict`):**
 ```bash
@@ -87,7 +87,7 @@ curl -X POST http://127.0.0.1:5000/predict \
   -d '{"features": [1, 2, 3, 4]}'
 # Respuesta esperada: {"error":Datos mal estructurados"}
 ```
-![Respuesta del endpoint /predict con datos no válidos en cURL](docs\images\datos_invalidos.png)
+![Respuesta del endpoint /predict con datos no válidos en cURL](docs/images/datos_invalidos.png)
 
 **Limitación:** Este enfoque requiere que cada desarrollador configure su propio entorno de Python, instale dependencias manualmente y gestione dos procesos en terminales separadas. Es propenso a errores de "en mi máquina funciona".
 
@@ -95,7 +95,7 @@ curl -X POST http://127.0.0.1:5000/predict \
 ```bash
 python iris_app/model/test_api.py
 ```
-![Prueba con el archivo test_api.py de la API](docs\images\pruebas_api.png)
+![Prueba con el archivo test_api.py de la API](docs/images/pruebas_api.png)
 
 ---
 
@@ -129,7 +129,7 @@ El `Dockerfile` se configuró para copiar este script y ejecutarlo con `CMD ["./
     ```bash
     docker run -p 5000:5000 -p 8501:8501 --name iris-app iris-classifier
     ```
-![Ejecución del contenedor](docs\images\docker_run.png)
+![Ejecución del contenedor](docs/images/docker_run.png)
 
 **Ventaja:** La aplicación ahora es portable. Cualquiera con Docker puede ejecutarla con dos comandos.
 
@@ -163,19 +163,19 @@ El flujo de trabajo se simplifica enormemente:
 # Levantar toda la aplicación (construye si es necesario)
 docker-compose up --build
 ```
-![Comprobar si hay imágenes de Docker construidas](docs\images\docker_images.png)
+![Comprobar si hay imágenes de Docker construidas](docs/images/docker_images.png)
 
 Ya que están las imágenes construidas, en futuras ejecuciones basta con:
 ```bash
 docker-compose up
 ```
-![Docker compose up para levantar la aplicación](docs\images\docker_composeup.png)
+![Docker compose up para levantar la aplicación](docs/images/docker_composeup.png)
 
 # Detener y eliminar todo
 ```bash
 docker-compose down
 ```
-![Docker compose down para detener la aplicación](docs\images\docker_composedown.png)
+![Docker compose down para detener la aplicación](docs/images/docker_composedown.png)
 
 **Ventajas:**
 -   **Alineado con las mejores prácticas:** Un proceso por contenedor.
