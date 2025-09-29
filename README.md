@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿# 🌸 Clasificador de Iris con Flask + Streamlit
+﻿﻿# 🌸 Clasificador de Iris con Flask + Streamlit
 
 > Creado por **Liliana Garmendia**
 
@@ -219,7 +219,7 @@ Sigue estos pasos si prefieres no usar Docker y ejecutar los servicios directame
     python iris_app/model/test_api.py
     ```
 
-    ![Prueba con el archivo test_api.py de la API](docs\images\pruebas_api.png)
+    !Prueba con el archivo test_api.py de la API
 
 ---
 
